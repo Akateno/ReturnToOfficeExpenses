@@ -1,9 +1,5 @@
 {
   "name": "rto-app",
-  "description": "Build scripts for Heroku",
-  "engines": {
-    "node": ">= 14"
-  },
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -18,14 +14,10 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "npm install --prefix client && npm run build --prefix client",
-    "deploy": "cp -a client/build/. public/",
+    "start": "node server/server.js",
+    "build": "react-scripts build",
     "test": "react-scripts test",
-    "clean": "rm -rf public",
-    "eject": "react-scripts eject", 
-    "heroku-postbuild": "npm run clean && npm run build && npm run deploy"
-
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
