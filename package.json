@@ -1,5 +1,6 @@
 {
   "name": "rto-app",
+  "description": "Build scripts for Heroku",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -15,9 +16,13 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "npm install --prefix client && npm run build --prefix client",
+    "deploy": "cp -a client/build/. public/",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "clean": "rm -rf public",
+    "eject": "react-scripts eject", 
+    "heroku-postbuild": "npm run clean && npm run build && npm run deploy"
+
   },
   "eslintConfig": {
     "extends": [
