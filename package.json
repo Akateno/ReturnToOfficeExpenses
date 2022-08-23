@@ -14,7 +14,10 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "node server/server.js",
+    "start": "node server.js",
+    "server": "json-server --watch db.json --port 4000",
+    "dev": "concurrently \"npm run server\" \"npm run start\"",
+
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
