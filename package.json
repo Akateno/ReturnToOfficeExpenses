@@ -1,6 +1,9 @@
 {
   "name": "rto-app",
   "description": "Build scripts for Heroku",
+  "engines": {
+    "node": ">= 14"
+  },
   "version": "0.1.0",
   "private": true,
   "dependencies": {
